@@ -5,12 +5,15 @@ const apiController = require('../controllers/api.controller');
 const router = express.Router();
 
 // Endpoint for getting all the records
-router.get('/', apiController.getUsers);
+router.get('/get-all-users', apiController.getUsers);
 
 // Endpoint for creating a new record
-router.post('/new', apiController.addUser);
+router.post('/add-new-user', apiController.addUser);
 
-// Endpoints for updating/deleting a record
-router.route('/:id').put(apiController.updateUser).delete(apiController.deleteUser);
+// Endpoints for updating a record
+router.put('/update/:id', apiController.updateUser);
+
+// Endpoints for deleting a record
+router.delete('/delete/:id', apiController.deleteUser);
 
 module.exports = router;
