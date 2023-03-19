@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
-const whitelist = [];
+const whitelist = ['*'];
 const corsOptions = {
     origin: function (origin = '*', callback) {
         if (whitelist.indexOf(origin) !== -1) callback(null, true);
